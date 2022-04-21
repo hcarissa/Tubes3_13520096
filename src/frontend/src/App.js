@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react";
-import { StyleSheet, View, Dimensions } from "react-native";
+// import { StyleSheet, View, Dimensions } from "react-native";
 import getWindowDimensions from "./components/getWindowDimensions";
 import logoDNA from './dna.png';
 
