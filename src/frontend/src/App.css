@@ -45,15 +45,15 @@
   font-family: 'Montserrat';
 } */
 
-@media screen and (min-width: 1501px) {
+@media screen and (min-width: 601px) {
   .Logo {
     padding: 12px;
-    height: 100px;
+    height: 80px;
     box-sizing: border-box;
     border-radius: 5px;
   }
   .App-Name{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: var(--dl-font-weight-font-weight-bold);
     color: white;
     margin-left: 5px;
@@ -61,15 +61,15 @@
   }
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 600px) {
   .Logo {
     padding: 12px;
-    height: 7vw;
+    height: 13vw;
     box-sizing: border-box;
     border-radius: 5px;
   }
   .App-Name{
-    font-size: 3vw;
+    font-size: 5vw;
     font-weight: var(--dl-font-weight-font-weight-bold);
     color: white;
     margin-left: 5px;
