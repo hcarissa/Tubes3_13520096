@@ -103,7 +103,7 @@
 .App-Description{
   /* width: 25rem; */
   object-fit: cover;
-  width: 25%;
+  width: 30%;
   max-width: 600px;
   /* height: 60%; */
   background-color:#476072;
@@ -118,6 +118,7 @@
   text-align: justify;
   /* text-justify: inter-word; */
   line-height: 2.6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .container3{
@@ -126,10 +127,10 @@
   flex-direction: column;
   /* background-color: #476072; */
   /* justify-content: left; */
-  width: 63%;
+  width: 100%;
   position:relative;
   float: left;
-  margin-left: 10px;
+  margin-left: 40px;
   margin-right: 40px;
   /* align-items: top; */
   padding-top: 20px;
@@ -138,8 +139,8 @@
 
 .box1{
   object-fit: cover;
-  width: 90%;
-  max-width: 1200px;
+  width: 95%;
+  /* max-width: 2000px; */
   background-color:#476072;
   flex-direction: column;
   border-radius: 20px;
@@ -153,7 +154,7 @@
   margin-right: 40px;
   padding-left: 40px;
   padding-right: 40px;
-  
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
 }
 
 .text-FiturKami{
