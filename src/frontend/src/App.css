@@ -12,12 +12,7 @@
 .header {
   width: 100%;
   display: flex;
-  /* max-width: var(--dl-size-size-maxwidth); */
   align-items: center;
-  /* padding-top: var(--dl-space-space-twounits);
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
-  padding-bottom: var(--dl-space-space-twounits); */
   justify-content: space-between;
 }
 
@@ -28,22 +23,7 @@
   flex-direction: row;
 }
 
-/* .Logo {
-  padding: 12px;
-  height: 7vw;
-  box-sizing: border-box;
-  border-radius: 5px;
-} */
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-/* .App-Name{
-  font-size: 3vw;
-  font-weight: var(--dl-font-weight-font-weight-bold);
-  color: white;
-  margin-left: 5px;
-  font-family: 'Montserrat';
-} */
 
 @media screen and (min-width: 601px) {
   .Logo {
@@ -66,7 +46,6 @@
     padding: 12px;
     height: 13vw;
     box-sizing: border-box;
-    border-radius: 5px;
   }
   .App-Name{
     font-size: 5vw;
@@ -88,59 +67,88 @@
   justify-content: space-between;
 }
 
-.container2 {
-  width: 100%;
-  display: flex;
-  padding: 10px;
-  /* max-width: var(--dl-size-size-maxwidth); */
-  min-height: 80vh;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 40px;
+@media screen and (max-width: 800px){
+  .container2 {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    min-width: 40vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .App-Description{
+    object-fit: cover;
+    width: 80%;
+    max-width: 600px;
+    background-color:#476072;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+    font-style: bold;
+    font-family: 'Montserrat';
+    text-align: justify;
+    line-height: 2.6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .container3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position:relative;
+    float: left;
+    margin-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
-.App-Description{
-  /* width: 25rem; */
-  object-fit: cover;
-  width: 30%;
-  max-width: 600px;
-  /* height: 60%; */
-  background-color:#476072;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 20px;
-  flex-direction: column;
-  border-radius: 20px;
-  color: white;
-  font-style: bold;
-  font-family: 'Montserrat';
-  text-align: justify;
-  /* text-justify: inter-word; */
-  line-height: 2.6;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.container3{
-  display: flex;
-  /* margin-left: var(--dl-space-space-twounits); */
-  flex-direction: column;
-  /* background-color: #476072; */
-  /* justify-content: left; */
-  width: 100%;
-  position:relative;
-  float: left;
-  margin-left: 40px;
-  margin-right: 40px;
-  /* align-items: top; */
-  padding-top: 20px;
-  padding-bottom: 20px;
+@media screen and (min-width: 801px ){
+  .container2 {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    min-width: 40vh;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 60px;
+  }
+  .App-Description{
+    object-fit: cover;
+    width: 50%;
+    max-width: 400px;
+    background-color:#476072;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+    font-style: bold;
+    font-family: 'Montserrat';
+    text-align: justify;
+    line-height: 2.6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .container3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position:relative;
+    float: left;
+    margin-left: 60px;
+    /* margin-right: 20px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .box1{
   object-fit: cover;
-  width: 95%;
-  /* max-width: 2000px; */
   background-color:#476072;
   flex-direction: column;
   border-radius: 20px;
@@ -149,9 +157,9 @@
   font-family: 'Montserrat';
   text-align: justify;
   line-height: 1.5;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-right: 40px;
+  margin-top: 30px;
+  /* margin-bottom: 10px; */
+  margin-right: 60px;
   padding-left: 40px;
   padding-right: 40px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
@@ -242,5 +250,3 @@
     transform: rotate(360deg);
   }
 } */
-
-

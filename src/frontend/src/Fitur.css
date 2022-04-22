@@ -1,0 +1,99 @@
+.App-Fitur {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #334257;
+}
+  
+.header-Fitur {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container1-Fitur {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+  
+@media screen and (min-width: 601px) {
+.Logo-Fitur {
+    padding: 12px;
+    height: 80px;
+    box-sizing: border-box;
+}
+.App-Name-Fitur{
+    font-size: 30px;
+    font-weight: var(--dl-font-weight-font-weight-bold);
+    color: white;
+    margin-left: 5px;
+    font-family: 'Montserrat';
+}
+}
+  
+@media screen and (max-width: 600px) {
+.Logo-Fitur {
+    padding: 12px;
+    height: 13vw;
+    box-sizing: border-box;
+}
+.App-Name-Fitur{
+    font-size: 5vw;
+    font-weight: var(--dl-font-weight-font-weight-bold);
+    color: white;
+    margin-left: 5px;
+    font-family: 'Montserrat';
+}
+}
+
+.containerFitur{
+    display: flex; 
+    justify-content: flex-end;
+    min-width: 40vh;
+    align-items: center;
+    flex-direction: row;
+}
+
+.btn-Fitur {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+    outline: none;
+    color: #fff;
+    background-color: #476072;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Montserrat'
+}
+  
+.btn-Fitur:hover {background-color: #3e8e41}
+  
+.btn-Fitur:active {
+    background-color: #3e8e41;
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
+
+
+@media screen and (min-width: 865px) {
+
+}
+
+@media screen and (max-width: 864px) {
+    .containerFitur{
+        display: none;
+    }
+}
