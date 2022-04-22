@@ -1,0 +1,185 @@
+.App {
+  width: 100%;
+  display: flex;
+  /* overflow: auto; */
+  min-height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #334257;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container1 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@media screen and (min-width: 601px) {
+  .Logo {
+    padding: 12px;
+    height: 80px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .App-Name{
+    font-size: 30px;
+    font-weight: var(--dl-font-weight-font-weight-bold);
+    color: white;
+    margin-left: 5px;
+    font-family: 'Montserrat';
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Logo {
+    padding: 12px;
+    height: 13vw;
+    box-sizing: border-box;
+  }
+  .App-Name{
+    font-size: 5vw;
+    font-weight: var(--dl-font-weight-font-weight-bold);
+    color: white;
+    margin-left: 5px;
+    font-family: 'Montserrat';
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-twounits);
+  max-width: var(--dl-size-size-maxwidth);
+  min-height: 80vh;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 800px){
+  .container2 {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    min-width: 40vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .App-Description{
+    object-fit: cover;
+    width: 80%;
+    max-width: 600px;
+    background-color:#476072;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+    font-style: bold;
+    font-family: 'Montserrat';
+    text-align: justify;
+    line-height: 2.6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .container3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position:relative;
+    float: left;
+    margin-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 801px ){
+  .container2 {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    min-width: 40vh;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 60px;
+  }
+  .App-Description{
+    object-fit: cover;
+    width: 50%;
+    max-width: 400px;
+    background-color:#476072;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+    font-style: bold;
+    font-family: 'Montserrat';
+    text-align: justify;
+    line-height: 2.6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .container3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position:relative;
+    float: left;
+    margin-left: 60px;
+    /* margin-right: 20px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.box1{
+  object-fit: cover;
+  background-color:#476072;
+  flex-direction: column;
+  border-radius: 20px;
+  color: white;
+  font-style: bold;
+  font-family: 'Montserrat';
+  text-align: justify;
+  line-height: 1.5;
+  margin-top: 30px;
+  margin-right: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+  border: none;
+}
+
+.box1:hover {background-color: #213442}
+  
+.box1:active {
+    background-color: #111f29;
+    transform: translateY(4px);
+}
+
+.text-FiturKami{
+  font-size: 38px;
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.text-FiturFitur{
+  font-size: 20px;
+  color: white;
+  font-family: 'Montserrat';
+}
