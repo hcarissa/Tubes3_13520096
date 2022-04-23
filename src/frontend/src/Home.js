@@ -3,8 +3,25 @@ import React, { Component } from "react";
 // import {Link } from "react-router-dom";
 import logoDNA from './dna.png';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  let navigate = useNavigate(); 
+  const routeChangeTambah = () =>{ 
+    let path = `FiturTambah`; 
+    navigate(path);
+  }
+
+  const routeChangeRiwayat = () =>{ 
+    let path = `FiturRiwayat`; 
+    navigate(path);
+  }
+
+  const routeChangePrediksi = () =>{ 
+    let path = `FiturPrediksi`; 
+    navigate(path);
+  }
+
   return (
     <div className='App'>
       <header data-role="Header" className='header'>
@@ -22,15 +39,15 @@ function Home() {
           </div>
           <div className='container3'>
             <h1 className='text-FiturKami'>FITUR KAMI</h1>
-            <button className='box1'>
-              <h1 className='text-FiturFitur'>Riwayat Prediksi</h1>
+            <button className='box1' onClick={routeChangeRiwayat}>
+              <h1 className='text-FiturFitur' >Riwayat Prediksi</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere.</p>
             </button>
-            <button className='box1'>
+            <button className='box1' onClick={routeChangeTambah}>
               <h1 className='text-FiturFitur'>Tambah Penyakit</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere.</p>
             </button>
-            <button className='box1'>
+            <button className='box1' onClick={routeChangePrediksi}>
               <h1 className='text-FiturFitur'>Prediksi Penyakit</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere.</p>
             </button>

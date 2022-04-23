@@ -1,0 +1,149 @@
+.App-Fitur-Riwayat {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #334257;
+}
+  
+.header-Fitur-Riwayat {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container1-Fitur-Riwayat {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+  
+@media screen and (min-width: 601px) {
+.Logo-Fitur-Riwayat {
+    padding: 12px;
+    height: 80px;
+    box-sizing: border-box;
+}
+.App-Name-Fitur-Riwayat{
+    font-size: 30px;
+    font-weight: var(--dl-font-weight-font-weight-bold);
+    color: white;
+    margin-left: 5px;
+    font-family: 'Montserrat';
+}
+}
+  
+@media screen and (max-width: 600px) {
+.Logo-Fitur-Riwayat {
+    padding: 12px;
+    height: 13vw;
+    box-sizing: border-box;
+}
+.App-Name-Fitur-Riwayat{
+    font-size: 5vw;
+    font-weight: var(--dl-font-weight-font-weight-bold);
+    color: white;
+    margin-left: 5px;
+    font-family: 'Montserrat';
+}
+}
+
+.containerFitur-Riwayat{
+    display: flex; 
+    justify-content: flex-end;
+    min-width: 40vh;
+    align-items: center;
+    flex-direction: row;
+}
+
+.btn-Fitur-Riwayat {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+    outline: none;
+    color: #fff;
+    background-color: #476072;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Montserrat'
+}
+  
+.btn-Fitur-Riwayat:hover {background-color: #213442}
+  
+.btn-Fitur-Riwayat:active {
+    background-color: #111f29;
+    transform: translateY(4px);
+}
+
+
+@media screen and (min-width: 865px) {
+
+}
+
+@media screen and (max-width: 864px) {
+    .containerFitur-Riwayat{
+        display: none;
+    }
+}
+
+.container-Body-Fitur-Riwayat {
+    width: 100%;
+    display: flex;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.container-box-Fitur-Riwayat {
+    position: absolute;
+    display: flex;
+    min-width: 80vh;
+    min-height: 50vh;
+    width: 100%;
+    margin-left:20px;
+    margin-right:20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.box-fitur-Riwayat{
+    /* object-fit: cover; */
+    width: 80%;
+    position: absolute;
+    min-width: 80vh;
+    max-width: 900px;
+    min-height: 50vh;
+    background: #EEEEEE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+}
+
+.box-fitur-header-Riwayat{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding:10px;
+    background-color: #AFD7F5;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

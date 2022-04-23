@@ -1,4 +1,4 @@
-.App-Fitur {
+.App-Fitur-Tambah {
     width: 100%;
     display: flex;
     overflow: auto;
@@ -9,13 +9,13 @@
     background-color: #334257;
 }
   
-.header-Fitur {
+.header-Fitur-Tambah {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.container1-Fitur {
+.container1-Fitur-Tambah {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
@@ -25,12 +25,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
   
 @media screen and (min-width: 601px) {
-.Logo-Fitur {
+.Logo-Fitur-Tambah {
     padding: 12px;
     height: 80px;
     box-sizing: border-box;
 }
-.App-Name-Fitur{
+.App-Name-Fitur-Tambah{
     font-size: 30px;
     font-weight: var(--dl-font-weight-font-weight-bold);
     color: white;
@@ -40,12 +40,12 @@
 }
   
 @media screen and (max-width: 600px) {
-.Logo-Fitur {
+.Logo-Fitur-Tambah {
     padding: 12px;
     height: 13vw;
     box-sizing: border-box;
 }
-.App-Name-Fitur{
+.App-Name-Fitur-Tambah{
     font-size: 5vw;
     font-weight: var(--dl-font-weight-font-weight-bold);
     color: white;
@@ -54,7 +54,7 @@
 }
 }
 
-.containerFitur{
+.containerFitur-Tambah{
     display: flex; 
     justify-content: flex-end;
     min-width: 40vh;
@@ -62,7 +62,7 @@
     flex-direction: row;
 }
 
-.btn-Fitur {
+.btn-Fitur-Tambah {
     display: inline-block;
     padding: 10px 20px;
     font-size: 14px;
@@ -79,11 +79,10 @@
     font-family: 'Montserrat'
 }
   
-.btn-Fitur:hover {background-color: #3e8e41}
+.btn-Fitur-Tambah:hover {background-color: #213442}
   
-.btn-Fitur:active {
-    background-color: #3e8e41;
-    box-shadow: 0 1px #666;
+.btn-Fitur-Tambah:active {
+    background-color: #111f29;
     transform: translateY(4px);
 }
 
@@ -93,7 +92,58 @@
 }
 
 @media screen and (max-width: 864px) {
-    .containerFitur{
+    .containerFitur-Tambah{
         display: none;
     }
+}
+
+.container-Body-Fitur-Tambah {
+    width: 100%;
+    display: flex;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.container-box-Fitur-Tambah {
+    position: absolute;
+    display: flex;
+    min-width: 80vh;
+    min-height: 50vh;
+    width: 100%;
+    margin-left:20px;
+    margin-right:20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.box-fitur-Tambah{
+    /* object-fit: cover; */
+    width: 80%;
+    position: absolute;
+    min-width: 80vh;
+    max-width: 900px;
+    min-height: 50vh;
+    background: #EEEEEE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+}
+
+.box-fitur-header-Tambah{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding:10px;
+    background-color: #AFD7F5;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
