@@ -8,21 +8,7 @@ import { render } from 'react-dom';
 class FiturTambah extends React.Component{
 
   render() {
-    let navigate = useNavigate(); 
-    const routeChangeTambah = () =>{ 
-      let path = `FiturTambah`; 
-      navigate(path);
-    }
-  
-    const routeChangeRiwayat = () =>{ 
-      let path = `FiturRiwayat`; 
-      navigate(path);
-    }
-  
-    const routeChangePrediksi = () =>{ 
-      let path = `FiturPrediksi`; 
-      navigate(path);
-    }
+    
     return (
       <div className='App-Fitur-Tambah'>
         <header data-role="Header-Fitur-Tambah" className='header'>
@@ -32,13 +18,13 @@ class FiturTambah extends React.Component{
           </div>
   
           <div className='containerFitur-Tambah'>
-              <button className='btn-Fitur-Tambah' onClick={routeChangeRiwayat}>
+              <button className='btn-Fitur-Tambah'>
                   Riwayat Prediksi
               </button>
-              <button className='btn-Fitur-Tambah' onClick={routeChangeTambah}>
+              <button className='btn-Fitur-Tambah'>
                   Tambah Penyakit
               </button>
-              <button className='btn-Fitur-Tambah' onClick={routeChangePrediksi}>
+              <button className='btn-Fitur-Tambah'>
                   Prediksi Penyakit
               </button>
           </div>
