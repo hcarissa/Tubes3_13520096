@@ -90,3 +90,5 @@ if(isDNAValid(dna)){
 }else{
     console.log("ga valid");
 }
+
+module.exports = {isDNAValid, KMPMatching, BMMatching};
