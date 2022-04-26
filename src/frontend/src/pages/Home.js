@@ -35,21 +35,21 @@ function Home() {
         <div className='container2'>
           <div className='App-Description'>
             <h1 >search.dna</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere. Nulla facilisi. Vivamus luctus, leo vel consequat ullamcorper, justo ex sodales urna, vel porttitor sem nulla quis ex. Proin vestibulum lectus eu lorem congue consequat. Proin feugiat dui orci, eget varius ligula viverra vitae. Proin ac nulla pulvinar, facilisis ante sed, scelerisque mi.</p>
+            <p>search.dna adalah sebuah website yang berfungsi untuk menyimpan sequence DNA dari suatu penyakit. Terdapat beberapa fitur dengan fitur utama berupa test DNA yang akan memprediksi penyakit dengan mencocokkan sequence DNA yang ada di database dengan sequence DNA pengguna.</p>
           </div>
           <div className='container3'>
             <h1 className='text-FiturKami'>FITUR KAMI</h1>
             <button className='box1' onClick={routeChangeRiwayat}>
               <h1 className='text-FiturFitur' >Riwayat Prediksi</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere.</p>
+              <p>Cari hasil test berdasarkan tanggal dan nama penyakit!</p>
             </button>
             <button className='box1' onClick={routeChangeTambah}>
               <h1 className='text-FiturFitur'>Tambah Penyakit</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere.</p>
+              <p>Tambahkan sequence DNA untuk penyakit baru!!</p>
             </button>
             <button className='box1' onClick={routeChangePrediksi}>
-              <h1 className='text-FiturFitur'>Prediksi Penyakit</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere.</p>
+              <h1 className='text-FiturFitur'>Test DNA</h1>
+              <p>Cek apakah kamu memiliki penyakit tertentu berdasarkan sequence DNAmu!</p>
             </button>
           </div>
         </div>

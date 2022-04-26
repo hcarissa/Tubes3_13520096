@@ -36,7 +36,7 @@ function FiturTambah() {
                 Tambah Penyakit
             </button>
             <button className='btn-Fitur-Prediksi'onClick={routeChangePrediksi}>
-                Prediksi Penyakit
+                Test DNA
             </button>
         </div>
       </header>
@@ -44,7 +44,7 @@ function FiturTambah() {
         <div className='container-box-Fitur-Prediksi'>
           <div className='box-fitur-Prediksi'>
             <div className='box-fitur-header-Prediksi'>
-              Prediksi Penyakit
+              Test DNA
             </div>
             <div>
               body
