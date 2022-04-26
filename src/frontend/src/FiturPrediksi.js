@@ -2,6 +2,7 @@
 import './FiturPrediksi.css'
 import React, { Component } from "react";
 import logoDNA from './dna.png';
+import { useNavigate, Link } from "react-router-dom";
 
 function FiturTambah() {
   return (
@@ -9,7 +10,7 @@ function FiturTambah() {
       <header data-role="Header-Fitur-Prediksi" className='header'>
         <div className='container1-Fitur-Prediksi'>
           <img src={logoDNA} className='Logo-Fitur-Prediksi' />
-          <span className='App-Name-Fitur-Prediksi'> search.dna </span>
+          <Link to='/' className='App-Name-Fitur-Prediksi'> search.dna </Link>
         </div>
 
         <div className='containerFitur-Prediksi'>

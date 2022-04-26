@@ -2,15 +2,21 @@
 import './FiturRiwayat.css'
 import React, { Component } from "react";
 import logoDNA from './dna.png';
+import { useNavigate, Link } from "react-router-dom";
 
 function FiturTambah() {
+  // let navigate = useNavigate(); 
+  // const routeChangeTambahh = () =>{ 
+  //   let path = `FiturTambah`; 
+  //   navigate(path);
+  // }
 
   return (
     <div className='App-Fitur-Riwayat'>
       <header data-role="Header-Fitur-Riwayat" className='header'>
         <div className='container1-Fitur-Riwayat'>
           <img src={logoDNA} className='Logo-Fitur-Riwayat' />
-          <span className='App-Name-Fitur-Riwayat'> search.dna </span>
+          <Link to='/' className='App-Name-Fitur-Riwayat'> search.dna </Link>
         </div>
 
         <div className='containerFitur-Riwayat'>

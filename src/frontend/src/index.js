@@ -2,10 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Home from './Home';
-import FiturTambah from './FiturTambah';
-import FiturRiwayat from './FiturRiwayat'
-import FiturPrediksi from './FiturPrediksi';
+
 import reportWebVitals from './reportWebVitals';
 
 // import ReactDOM from 'react-dom';

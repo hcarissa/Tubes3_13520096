@@ -2,6 +2,7 @@
 import './FiturTambah.css'
 import React, { Component } from "react";
 import logoDNA from './dna.png';
+import { useNavigate, Link } from "react-router-dom";
 
 function FiturTambah() {
 
@@ -10,7 +11,7 @@ function FiturTambah() {
       <header data-role="Header-Fitur-Tambah" className='header'>
         <div className='container1-Fitur-Tambah'>
           <img src={logoDNA} className='Logo-Fitur-Tambah' />
-          <span className='App-Name-Fitur-Tambah'> search.dna </span>
+          <Link to='/' className='App-Name-Fitur-Tambah'> search.dna </Link>
         </div>
 
         <div className='containerFitur-Tambah'>

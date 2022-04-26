@@ -71,7 +71,7 @@
   .container2 {
     width: 100%;
     display: flex;
-    padding: 10px;
+    padding: 30px;
     min-width: 40vh;
     align-items: center;
     flex-direction: column;
@@ -85,7 +85,7 @@
     background-color:#476072;
     padding-left: 40px;
     padding-right: 40px;
-    flex-direction: column;
+    /* flex-direction: column; */
     border-radius: 20px;
     color: white;
     font-style: bold;
@@ -94,6 +94,7 @@
     line-height: 2.6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+
   .container3{
     display: flex;
     flex-direction: column;

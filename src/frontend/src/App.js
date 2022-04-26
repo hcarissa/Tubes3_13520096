@@ -12,6 +12,8 @@ function App() {
             <Route path="FiturTambah" element={ <FiturTambah/> } />
             <Route path="FiturRiwayat" element={ <FiturRiwayat/> } />
             <Route path="FiturPrediksi" element={ <FiturPrediksi/> } />
+
+            <Route component={() => <Redirect to="/" />} />
       </Routes>
     </div>
   )
