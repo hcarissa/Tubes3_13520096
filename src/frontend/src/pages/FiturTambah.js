@@ -43,6 +43,7 @@ class FiturTambah extends React.Component{
                   <input type="text" />
                   <label>Sequence DNA</label>
                   <input type="file" name="file" />
+                  <button>upload</button>
                 </div>
               </form>
             </div>
