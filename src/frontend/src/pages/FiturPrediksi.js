@@ -5,6 +5,21 @@ import logoDNA from './dna.png';
 import { useNavigate, Link } from "react-router-dom";
 
 function FiturTambah() {
+  let navigate = useNavigate(); 
+  const routeChangeTambah = () =>{ 
+    let path = `/FiturTambah`; 
+    navigate(path);
+  }
+
+  const routeChangeRiwayat = () =>{ 
+    let path = `/FiturRiwayat`; 
+    navigate(path);
+  }
+
+  const routeChangePrediksi = () =>{ 
+    let path = `/FiturPrediksi`; 
+    navigate(path);
+  }
   return (
     <div className='App-Fitur-Prediksi'>
       <header data-role="Header-Fitur-Prediksi" className='header'>
@@ -14,13 +29,13 @@ function FiturTambah() {
         </div>
 
         <div className='containerFitur-Prediksi'>
-            <button className='btn-Fitur-Prediksi'>
+            <button className='btn-Fitur-Prediksi' onClick={routeChangeRiwayat}>
                 Riwayat Prediksi
             </button>
-            <button className='btn-Fitur-Prediksi'>
+            <button className='btn-Fitur-Prediksi' onClick={routeChangeTambah}>
                 Tambah Penyakit
             </button>
-            <button className='btn-Fitur-Prediksi'>
+            <button className='btn-Fitur-Prediksi'onClick={routeChangePrediksi}>
                 Prediksi Penyakit
             </button>
         </div>
