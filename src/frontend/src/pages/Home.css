@@ -125,7 +125,7 @@
     background-color:#476072;
     padding-left: 40px;
     padding-right: 40px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     flex-direction: column;
     border-radius: 20px;
     color: white;

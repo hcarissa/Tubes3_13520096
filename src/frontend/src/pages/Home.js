@@ -35,7 +35,7 @@ function Home() {
         <div className='container2'>
           <div className='App-Description'>
             <h1 >search.dna</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere. Nulla facilisi. Vivamus luctus, leo vel consequat ullamcorper, justo ex sodales urna, vel porttitor sem nulla quis ex. Proin vestibulum lectus eu lorem congue consequat. Proin feugiat dui orci, eget varius ligula viverra vitae. Proin ac nulla pulvinar, facilisis ante sed, scelerisque mi. Phasellus eget pellentesque quam. Integer ultrices sapien lorem, eget porta leo porta nec.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien nec ultricies posuere. Nulla facilisi. Vivamus luctus, leo vel consequat ullamcorper, justo ex sodales urna, vel porttitor sem nulla quis ex. Proin vestibulum lectus eu lorem congue consequat. Proin feugiat dui orci, eget varius ligula viverra vitae. Proin ac nulla pulvinar, facilisis ante sed, scelerisque mi.</p>
           </div>
           <div className='container3'>
             <h1 className='text-FiturKami'>FITUR KAMI</h1>
