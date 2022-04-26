@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import Home from "./Home"
-import FiturTambah from "./FiturTambah"
-import FiturRiwayat from "./FiturRiwayat"
-import FiturPrediksi from './FiturPrediksi';
+import Home from "./pages/Home"
+import FiturTambah from "./pages/FiturTambah"
+import FiturRiwayat from "./pages/FiturRiwayat"
+import FiturPrediksi from './pages/FiturPrediksi';
 
 function App() {
   return (
@@ -12,8 +12,6 @@ function App() {
             <Route path="FiturTambah" element={ <FiturTambah/> } />
             <Route path="FiturRiwayat" element={ <FiturRiwayat/> } />
             <Route path="FiturPrediksi" element={ <FiturPrediksi/> } />
-
-            <Route component={() => <Redirect to="/" />} />
       </Routes>
     </div>
   )
