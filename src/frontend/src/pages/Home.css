@@ -107,7 +107,48 @@
   }
 }
 
-@media screen and (min-width: 801px ){
+@media screen and (min-width: 801px) and (max-width: 1060px){
+  .container2 {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    min-width: 40vh;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 60px;
+  }
+  .App-Description{
+    object-fit: cover;
+    width: 50%;
+    max-width: 400px;
+    background-color:#476072;
+    padding-left: 40px;
+    padding-right: 40px;
+    /* padding-bottom: 20px; */
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+    font-style: bold;
+    font-family: 'Montserrat';
+    text-align: justify;
+    line-height: 2.2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .container3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position:relative;
+    float: left;
+    margin-left: 60px;
+    /* margin-right: 20px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1061px ){
   .container2 {
     width: 100%;
     display: flex;

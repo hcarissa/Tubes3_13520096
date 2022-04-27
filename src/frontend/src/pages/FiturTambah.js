@@ -66,14 +66,18 @@ function FiturTambah() {
               Tambah Penyakit
             </div>
             <form>
-              <div>
-                <label>
-                    Nama Penyakit 
-                </label>
-                <input type="text" onChange={getInputValue}/>
-                <label>Sequence DNA</label>
-                <input type="file" name="file" onChange={setFileeee.bind(this)}/>
+              <div className='container-input-fitur-tambah'>
+                <div className='box-input-fitur-tambah'>
+                  <h3 className='text-tambah'>Nama Penyakit</h3>
+                  <input type="text" onChange={getInputValue} className="input-file-fitur-tambah"/>
+                </div>
+                
+                <div className='box-input-fitur-tambah'>
+                  <h3 className='text-tambah'>Sequence DNA</h3>
+                  <input className="input-file-fitur-tambah" type="file" name="file" onChange={setFileeee.bind(this)}/>
+                </div>
                 <button>upload</button>
+                
               </div>
             </form>
           </div>
