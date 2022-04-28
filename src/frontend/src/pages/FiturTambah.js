@@ -29,7 +29,6 @@ function FiturTambah() {
     };
 
     function setFileeee(event) {
-
       const reader = new FileReader()
       reader.onload = async (event) => { 
         const text = (event.target.result)
@@ -77,17 +76,14 @@ function FiturTambah() {
                   <input className="input-file-fitur-tambah" type="file" name="file" onChange={setFileeee.bind(this)}/>
                 </div>
                 <button>upload</button>
-                
               </div>
             </form>
           </div>
         </div>
       </div>
-
     </div>
   )
 }
-
 
 
 
