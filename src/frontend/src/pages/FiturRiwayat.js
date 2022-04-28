@@ -70,20 +70,23 @@ function FiturTambah() {
             <form>
               <div className='container-input-fitur-riwayat'>
                 <div className='box-input-fitur-riwayat'>
-                  <h3 className='text-testDNA'>Masukkan Query</h3>
+                  <h3 className='text-Riwayat'>Masukkan Query</h3>
                   <input type="text" onChange = {getInputValue} className="input-file-fitur-testDNA" value={val} />
                 </div>
                 <button onClick={handleSearch}>Search</button>
+                <div className='text-riwayat-result'>
+                  {data && data.map((item, index) => {
+                    if(data.length == 0){
+                      return <div> Tidak ada data </div>
+                    }else{
+                      return (
+                        <div>{item.tanggalPrediksi} - {item.namaPasien} - {item.penyakitPrediksi} - {item.statusTerprediksi}</div>
+                      );
+                    }
+                  })}
+                </div>
               </div>
             </form>
-            
-            <div className='box-input-fitur-riwayat'>
-            {data && data.map((item, index) => {
-              return (
-                <div>{item.tanggalPrediksi} - {item.namaPasien} - {item.penyakitPrediksi} - {item.statusTerprediksi}</div>
-                );
-              })}
-              </div>
           </div>
         </div>
       </div>

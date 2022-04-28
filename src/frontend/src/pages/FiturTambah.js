@@ -14,17 +14,16 @@ function FiturTambah() {
   var text = "";
   const [hasil, setHasil] = useState();
 
-  const reset = async (e) => {
-    e.preventDefault();
-    await axios.post('http://localhost:8000/tambahPenyakit', {
+  const reset = () => {
+    axios.post('http://localhost:8000/tambahPenyakit', {
       'namaPenyakit' : userValue,
       'rantaiDNA' : text
     }).then(function (response) {
       console.log(response.data.message);
       setHasil(response.data.message);
     });
-    setVal = "";
     ref.current.value = "";
+    setVal = "";
   };
 
   let navigate = useNavigate(); 
@@ -52,7 +51,7 @@ function FiturTambah() {
       const reader = new FileReader()
       reader.onload = async (event) => { 
         text = (event.target.result)
-        console.log(text)
+        // console.log(text)
         // alert(text)
       };
       reader.readAsText(event.target.files[0])
