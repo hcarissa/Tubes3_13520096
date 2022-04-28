@@ -22,48 +22,57 @@ function FiturTambah() {
     navigate(path);
   }
 
-  const hasil = 'GANTI INI';
+  const [hasil, setHasil] = useState();
   const [val, setVal] = useState();
   const [pred, setPred] = useState();
+  var inputNamaPengguna = "";
+  var prediksi = "";
+  var algoritmaPencarian = "";
+  var text = "";
 
   const ref = useRef();
 
-  const getInputValueNamaPenyakit = (event) => {
-    const userValue = event.target.value;
-    console.log(userValue);
+  const getInputValueNamaPengguna = (event) => {
+    inputNamaPengguna = event.target.value;
+    console.log(inputNamaPengguna);
   };
 
   const getInputValuePrediksiPenyakit = (event) => {
-    const userValue = event.target.value;
-    console.log(userValue);
+    prediksi = event.target.value;
+    console.log(prediksi);
   };
 
   const getInputValueAlgoritmaPencarian = (event) => {
-    const algoritmaPencarian = event.target.value;
+    algoritmaPencarian = event.target.value;
     console.log(algoritmaPencarian);
   };
 
   function setFileSequenceDNA(event) {
     const reader = new FileReader()
     reader.onload = async (event) => { 
-      const text = (event.target.result)
+      text = (event.target.result)
       console.log(text)
       // alert(text)
     };
     reader.readAsText(event.target.files[0])
   }
 
-  const reset = () => {
-    // axios.post('http://localhost:8000/tambahPenyakit', {
-    //   'namaPenyakit' : userValue,
-    //   'rantaiDNA' : text
-    // }).then(function (response) {
-    //   console.log(response.data.message);
-    //   alert(response.data.message);
-    // });
+  
+  const reset = async (e) => {
+    e.preventDefault();
+    await axios.post('http://localhost:8000/tesDNA', {
+      'namaPengguna' : inputNamaPengguna,
+      'DNA' : text,
+      'prediksiPenyakit' : prediksi,
+      'algoritmaPencarian' : algoritmaPencarian
+    }).then(response => {
+      console.log(response.data.message);
+      setHasil(response.data.message);
+      // await sleep(5000);
+    });
+    setVal("");
     ref.current.value = "";
-    setVal = "";
-    setPred = "";
+    setPred("");
   };
 
   return (
@@ -97,7 +106,7 @@ function FiturTambah() {
               <div className='container-input-fitur-testDNA'>
                 <div className='box-input-fitur-testDNA'>
                   <h3 className='text-testDNA'>Nama Pengguna</h3>
-                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValueNamaPenyakit} value={val}/>
+                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValueNamaPengguna} value={val}/>
                 </div>
                 <div className='box-input-fitur-testDNA'>
                   <h3 className='text-testDNA'>Sequence DNA</h3>
@@ -116,7 +125,7 @@ function FiturTambah() {
                 </div>
                 <button onClick={reset} >Submit</button>
                 <div className='text-tesDNA-result'>
-                  {hasil}
+                {hasil && <p>{hasil}  </p>}
                 </div>
               </div>
             </form>

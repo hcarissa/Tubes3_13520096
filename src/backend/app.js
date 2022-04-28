@@ -56,10 +56,6 @@ app.get('/api/jenisPenyakit', (req, res) => {
 app.post('/tambahPenyakit', (req, res) => {
     const namapenyakit = req.body.namaPenyakit;
     const rantaiDNA = req.body.rantaiDNA;
-    // console.log(namapenyakit);
-    // console.log(rantaiDNA);
-    // const namapenyakit = "tubes stimaaa";
-    // const rantaiDNA = "AGCTTTTCAG";
 
     var isValid = new Boolean(isDNAValid(rantaiDNA));
     if (isValid == true) {
@@ -87,9 +83,6 @@ app.post('/queryPenyakit', (req, res) => {
     const hasilregex = pisahinQuery(inputUser);
     const tanggal = hasilregex[0];
     const penyakit = hasilregex[1];
-    
-    // const tanggal = "-1";
-    // const penyakit = 'mental';
 
     if (penyakit != '' & tanggal != '-1') {
         datahasilprediksi.find({
@@ -123,11 +116,9 @@ app.post('/tesDNA', (req, res) => {
     const namaPengguna = req.body.namaPengguna;
     const prediksiPenyakit = req.body.prediksiPenyakit;    
     const algo = req.body.algo;
-    // var data = "";
 
     datajenispenyakit.findOne({'namaPenyakit' : prediksiPenyakit}).then(
         (penyakit) => {
-            // this.data = penyakit;
             var rantaiDNAPrediksiPenyakit = penyakit.rantaiDNA;
             const isValid = new Boolean(isDNAValid(DNA));
             if (isValid == true) {
@@ -144,169 +135,28 @@ app.post('/tesDNA', (req, res) => {
                     statusTerprediksi: hasil
                 });
                 newhasilPrediksi.save().then(hasilprediksi => {
+                    // console.log("sukses menambahkan data hasil prediksi");
                     res.json({
-                        // message : hasilprediksi.namaPengguna + " - " + hasilprediksi.tanggalPrediksi + " - " + hasilprediksi.prediksiPenyakit + " - " + hasilprediksi.hasil
                         message : namaPengguna + " - " + tanggalsekarang() + " - " + prediksiPenyakit + " - " + hasil
                     });
                 });
             }
             else {
+                // console.log("DNA tidak valid");
                 res.json({
                     message: 'Rantai DNA tidak valid'
                 });
             }
         }
     ).catch (function(err) {
+        // console.log("prediksi penyakit tidak ditemukan");
         res.json({
             message: 'Prediksi penyakit tidak ada di database'
         });
         console.log(err);
     });
-    // console.log(data.rantaiDNA);
-    // if (data != null) {
-    // } else {
-    // }
 }); 
-
-// app.post('/search', (req, res) => {
-//     // const input = req.body.input;
-//     // if (namaPenyakit && tanggal) {
-//     //     hasilPrediksi.find({ namaPenyakit, tanggal }).then(hasilPrediksi => {
-//     //         res.json(hasilPrediksi);
-//     //     });
-//     // } else if (namaPenyakit) {
-//     //     hasilPrediksi.find({ namaPenyakit }).then(hasilPrediksi => {
-//     //         res.json(hasilPrediksi);
-//     //     });
-//     // } else if (tanggal) {
-//     //     hasilPrediksi.find({ tanggal }).then(hasilPrediksi => {
-//     //         res.json(hasilPrediksi);
-//     //     });
-//     // } else {
-//     //     // hasilPrediksi.find().then(hasilPrediksi => {
-//     //     //     res.json(hasilPrediksi);
-//     //     // });
-//     //     res.send('tidak ada data');
-//     // }
-
-//     const tanggal = "06/04/2022";
-//     const namaPenyakit = "Delores Priscott";
-//     datahasilprediksi.find({ "namaPenyakit" : namaPenyakit, "tanggal" : tanggal }).then(hasilPrediksi => {
-//         res.json(hasilPrediksi);
-//     });
-// });
-
-
-
-
-// // tes DNA
-// app.post('/tesDNA', (req, res) => {
-//     const namaPengguna = req.body.namaPengguna;
-//     const seqDNA = req.body.seqDNA;
-//     const prediksiPenyakit = req.body.prediksiPenyakit;
-//     const tanggal = Date.now();
-
-//     const datapenyakit = jenisPenyakit.find().toArray();
-//     var prediksiPenyakitExist = datapenyakit.includes(prediksiPenyakit);
-
-//     var isValid = new Boolean(isDNAValid(seqDNA));
-//     if (isValid && prediksiPenyakitExist) {
-//         //
-//     } 
-// });
-
 
 app.listen(8000, () => {
     console.log('Server is running on port 8000');
-});
-
-
-// //  frontend
-// const namapengguna
-
-// axios.post('/prediksiPenyakit', {
-//     namapengguna : <namapenggunadisini>
-//     rantaiDNA : <rantaidnadisini>
-//     prediksipenyakit : <namapenyakit>
-//     }).then((response) => {
-//     // di sini nanti ditampilin hasilnya
-// });
-
-
-// app.post('/prediksipenyakit' (req, res) => {
-//     const namaPengguna = req.body.namaPengguna;
-//     const seqDNA = req.body.seqDNA;
-//     const prediksiPenyakit = req.body.prediksiPenyakit;
-   
-//     // algo disini
-
-//    res.send(hasil)
-// })
-
-app.post('/testis', (req, res) => {
-    console.log(req.body); 
-    console.log(req.body.namaPengguna);
-   
-    // lu requestnya pake yg www-form
-    // const namaPengguna = req.body.namaPengguna;
-    // const rantaiDNA = req.body.rantaiDNA;
-    // const valid = new Boolean(isDNAValid(rantaiDNA));
-    // if (valid) {
-    //     res.send({
-    //         'message': 'valid',
-    //         'rantaiDNA' : rantaiDNA,
-    //         'nama' : namaPengguna
-    //     })
-    // } else {
-    //     res.send({
-    //         'message': 'invalid',
-    //         'rantaiDNA' : rantaiDNA,
-    //         'nama' : namaPengguna
-    //     })
-    // }
-});
-
-app.get('/testis', (req, res) => {
-    let today = tanggalsekarang();
-    console.log(today);
-    res.send(today);
-});
-
-
-
-
-app.post('/cobaquery', (req, res) => {
-    const tanggal = "06/04/2022";
-    const penyakit = "ngantuk";
-    datahasilprediksi.find({
-         "penyakitPrediksi" : {$regex: penyakit, $options: 'i'}, 
-         "tanggalPrediksi" : {$regex: tanggal, $options: 'i'} 
-        })
-        .then(hasilPrediksi => {
-        res.json(hasilPrediksi);
-    });
-
-//     datahasilprediksi.find({
-        
-//     })
-//        .then(hasilPrediksi => {
-//        res.json(hasilPrediksi);
-//    });
-});
-
-
-app.post("/coba", (req, res) => {
-    const penyakit = "Maag";
-    var data = "";
-    datajenispenyakit.findOne(
-        {
-            "namaPenyakit" : penyakit
-        }
-    ).then(hasil => {
-        this.data = hasil.rantaiDNA;
-        console.log(this.data);
-        console.log(hasil);
-    });
-    console.log(this.data);
-    res.send(this.data);
 });

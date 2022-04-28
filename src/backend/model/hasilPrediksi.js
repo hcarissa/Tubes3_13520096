@@ -14,7 +14,7 @@ const hasilPrediksi = new mongoose.model('hasilPrediksi', {
         required : true
     },
     statusTerprediksi : {
-        type : Boolean
+        type : String
     },
 });
 

@@ -1,11 +1,15 @@
 // import './App.css';
+import axios from 'axios';
 import './FiturRiwayat.css'
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import logoDNA from './dna.png';
 import { useNavigate, Link } from "react-router-dom";
 
 function FiturTambah() {
   let navigate = useNavigate(); 
+  const [val, setVal] = useState();
+  var userQuery = '';
+  const [data, setData] = useState();
   const routeChangeTambah = () =>{ 
     let path = `/FiturTambah`; 
     navigate(path);
@@ -20,6 +24,22 @@ function FiturTambah() {
     let path = `/FiturPrediksi`; 
     navigate(path);
   }
+
+  const getInputValue = (event) => {
+    userQuery = event.target.value;
+    console.log(userQuery);
+
+  }
+
+  const handleSearch = async (e) =>{
+    e.preventDefault();
+    await axios.post('http://localhost:8000/queryPenyakit', {
+      'input' : userQuery
+      }).then(function (response) {
+        setData(response.data);
+        console.log(response.data);
+      });
+  };
 
   return (
     <div className='App-Fitur-Riwayat'>
@@ -50,13 +70,20 @@ function FiturTambah() {
             <form>
               <div className='container-input-fitur-riwayat'>
                 <div className='box-input-fitur-riwayat'>
-                  <h3 className='text-testDNA'>Nama Penyakit</h3>
-                  <input type="text" className="input-file-fitur-testDNA" />
+                  <h3 className='text-testDNA'>Masukkan Query</h3>
+                  <input type="text" onChange = {getInputValue} className="input-file-fitur-testDNA" value={val} />
                 </div>
-                <button>Submit</button>
-                <div className='text-riwayat-result'>result</div>
+                <button onClick={handleSearch}>Search</button>
               </div>
             </form>
+            
+            <div className='box-input-fitur-riwayat'>
+            {data && data.map((item, index) => {
+              return (
+                <div>{item.tanggalPrediksi} - {item.namaPasien} - {item.penyakitPrediksi} - {item.statusTerprediksi}</div>
+                );
+              })}
+              </div>
           </div>
         </div>
       </div>

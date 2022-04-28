@@ -14,16 +14,17 @@ function FiturTambah() {
   var text = "";
   const [hasil, setHasil] = useState();
 
-  const reset = () => {
-    axios.post('http://localhost:8000/tambahPenyakit', {
+  const reset = async (e) => {
+    e.preventDefault();
+    await axios.post('http://localhost:8000/tambahPenyakit', {
       'namaPenyakit' : userValue,
       'rantaiDNA' : text
     }).then(function (response) {
       console.log(response.data.message);
       setHasil(response.data.message);
     });
-    ref.current.value = "";
     setVal = "";
+    ref.current.value = "";
   };
 
   let navigate = useNavigate(); 
