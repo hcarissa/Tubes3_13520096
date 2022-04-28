@@ -70,7 +70,7 @@ app.post('/tambahPenyakit', (req, res) => {
         newPenyakit.save().then(penyakit => {
             res.json({
                 penyakit,
-                message : "UDAH MASUKK WOOOYYYYYYYYYYYY"
+                message : "Data penyakit berhasil ditambahkan!"
             });
             console.log("sukses menambahkan data penykit baru");
         });

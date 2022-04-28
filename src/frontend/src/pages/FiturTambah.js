@@ -12,7 +12,7 @@ function FiturTambah() {
   const ref = useRef();
   var userValue = '';
   var text = "";
-  var hasil = '';
+  const [hasil, setHasil] = useState();
 
   const reset = () => {
     axios.post('http://localhost:8000/tambahPenyakit', {
@@ -20,7 +20,7 @@ function FiturTambah() {
       'rantaiDNA' : text
     }).then(function (response) {
       console.log(response.data.message);
-      alert(response.data.message);
+      setHasil(response.data.message);
     });
     ref.current.value = "";
     setVal = "";
@@ -57,7 +57,7 @@ function FiturTambah() {
       reader.readAsText(event.target.files[0])
     }
 
-    // hasil = 'Berhasil ditambahkan!';
+    // const hasil = 'Berhasil ditambahkan!';
 
   return (
     <div className='App-Fitur-Tambah'>
