@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
+app.use(cors("localhost:3000"));
 
 // body-parser
 const bodyParser = require('body-parser');
@@ -12,6 +14,7 @@ const algo = require('./algo');
 const isDNAValid = algo.isDNAValid;
 const KMPMatching = algo.KMPMatching;
 const BMMatching = algo.BMMatching;
+const pisahinQuery = algo.pisahinQuery;
 
 // Load database
 require('./utils/db');
@@ -53,6 +56,11 @@ app.get('/api/jenisPenyakit', (req, res) => {
 app.post('/tambahPenyakit', (req, res) => {
     const namapenyakit = req.body.namaPenyakit;
     const rantaiDNA = req.body.rantaiDNA;
+    // console.log(namapenyakit);
+    // console.log(rantaiDNA);
+    // const namapenyakit = "tubes stimaaa";
+    // const rantaiDNA = "AGCTTTTCAG";
+
     var isValid = new Boolean(isDNAValid(rantaiDNA));
     if (isValid == true) {
         const newPenyakit = new jenisPenyakit({
@@ -62,8 +70,9 @@ app.post('/tambahPenyakit', (req, res) => {
         newPenyakit.save().then(penyakit => {
             res.json({
                 penyakit,
-                message : "sukses menambahkan ke database"
+                message : "UDAH MASUKK WOOOYYYYYYYYYYYY"
             });
+            console.log("sukses menambahkan data penykit baru");
         });
     } else {
         res.json({
@@ -74,15 +83,15 @@ app.post('/tambahPenyakit', (req, res) => {
 
 // query penyakit berdasarkan nama penyakit dan atau tanggal
 app.post('/queryPenyakit', (req, res) => {
-    // const inputUser = req.body.input;
-    // const hasilregex = fungsiRegex(inputUser);
-    // const tanggal = hasilregex[0];
-    // const penyakit = hasilregex[1];
+    const inputUser = string(req.body.input);
+    const hasilregex = pisahinQuery(inputUser);
+    const tanggal = hasilregex[0];
+    const penyakit = hasilregex[1];
     
-    const tanggal = "";
-    const penyakit = 'ngantuk';
+    // const tanggal = "";
+    // const penyakit = 'ngantuk';
 
-    if (penyakit != '' & tanggal != '') {
+    if (penyakit != '' & tanggal != '-1') {
         datahasilprediksi.find({
             "penyakitPrediksi" : {$regex: penyakit, $options: 'i'}, 
             "tanggalPrediksi" : {$regex: tanggal, $options: 'i'}
@@ -95,7 +104,7 @@ app.post('/queryPenyakit', (req, res) => {
         }).then(hasilprediksi => {
             res.send(hasilprediksi);
         });
-    } else if (tanggal != '') {
+    } else if (tanggal != '-1') {
         datahasilprediksi.find({
             "tanggalPrediksi" : {$regex: tanggal, $options: 'i'}
         }).then(hasilprediksi => {

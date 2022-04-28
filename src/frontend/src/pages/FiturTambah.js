@@ -5,12 +5,23 @@ import logoDNA from './dna.png';
 import { useNavigate, Link } from "react-router-dom";
 import { render } from 'react-dom';
 // import ReactFileReader from 'react-file-reader';
+import axios from 'axios';
 
 function FiturTambah() {
   const [val, setVal] = useState();
   const ref = useRef();
+  var userValue = '';
+  var text = "";
+  var hasil = '';
 
   const reset = () => {
+    axios.post('http://localhost:8000/tambahPenyakit', {
+      'namaPenyakit' : userValue,
+      'rantaiDNA' : text
+    }).then(function (response) {
+      console.log(response.data.message);
+      alert(response.data.message);
+    });
     ref.current.value = "";
     setVal = "";
   };
@@ -32,21 +43,21 @@ function FiturTambah() {
   }
 
   const getInputValue = (event) => {
-    const userValue = event.target.value;
+    userValue = event.target.value;
     console.log(userValue);
   };
 
     function setFileeee(event) {
       const reader = new FileReader()
       reader.onload = async (event) => { 
-        const text = (event.target.result)
+        text = (event.target.result)
         console.log(text)
         // alert(text)
       };
       reader.readAsText(event.target.files[0])
     }
 
-    const hasil = 'Berhasil ditambahkan!';
+    // hasil = 'Berhasil ditambahkan!';
 
   return (
     <div className='App-Fitur-Tambah'>
