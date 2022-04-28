@@ -1,12 +1,20 @@
 // import './App.css';
 import './FiturTambah.css'
-import React, { Component } from "react";
+import React, { Component, useState, useRef } from "react";
 import logoDNA from './dna.png';
 import { useNavigate, Link } from "react-router-dom";
 import { render } from 'react-dom';
 import ReactFileReader from 'react-file-reader';
 
 function FiturTambah() {
+  const [val, setVal] = useState();
+  const ref = useRef();
+
+  const reset = () => {
+    ref.current.value = "";
+    setVal = "";
+  };
+
   let navigate = useNavigate(); 
   const routeChangeTambah = () =>{ 
     let path = `/FiturTambah`; 
@@ -23,10 +31,10 @@ function FiturTambah() {
     navigate(path);
   }
 
-    const getInputValue = (event) => {
-      const userValue = event.target.value;
-      console.log(userValue);
-    };
+  const getInputValue = (event) => {
+    const userValue = event.target.value;
+    console.log(userValue);
+  };
 
     function setFileeee(event) {
       const reader = new FileReader()
@@ -70,14 +78,14 @@ function FiturTambah() {
               <div className='container-input-fitur-tambah'>
                 <div className='box-input-fitur-tambah'>
                   <h3 className='text-tambah'>Nama Penyakit</h3>
-                  <input type="text" onChange={getInputValue} className="input-file-fitur-tambah"/>
+                  <input type="text" onChange={getInputValue} className="input-file-fitur-tambah" value={val}/>
                 </div>
                 
                 <div className='box-input-fitur-tambah'>
                   <h3 className='text-tambah'>Sequence DNA</h3>
-                  <input className="input-file-fitur-tambah" type="file" name="file" onChange={setFileeee.bind(this)}/>
+                  <input className="input-file-fitur-tambah" type="file"  ref={ref} name="file" onChange={setFileeee.bind(this)}/>
                 </div>
-                <button>upload</button>
+                <button onClick={reset}>upload</button>
                 <div className='text-tambah-result'>
                   {hasil}
                 </div>
