@@ -154,12 +154,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 .box-input-fitur-testDNA{
     width: 100%;
-    min-height: 85px;
+    min-height: 80px;
     border-radius: 5px;
     border: none;
     background-color: #D3E0EA;

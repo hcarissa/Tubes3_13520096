@@ -38,6 +38,8 @@ function FiturTambah() {
       reader.readAsText(event.target.files[0])
     }
 
+    const hasil = 'Berhasil ditambahkan!';
+
   return (
     <div className='App-Fitur-Tambah'>
       <header data-role="Header-Fitur-Tambah" className='header'>
@@ -76,6 +78,9 @@ function FiturTambah() {
                   <input className="input-file-fitur-tambah" type="file" name="file" onChange={setFileeee.bind(this)}/>
                 </div>
                 <button>upload</button>
+                <div className='text-tambah-result'>
+                  {hasil}
+                </div>
               </div>
             </form>
           </div>

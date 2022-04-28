@@ -47,14 +47,19 @@ function FiturTambah() {
             <div className='box-fitur-header-Riwayat'>
               Riwayat Penyakit
             </div>
-            <div>
-              body
-            </div>
-            <span>aa</span>
+            <form>
+              <div className='container-input-fitur-riwayat'>
+                <div className='box-input-fitur-riwayat'>
+                  <h3 className='text-testDNA'>Nama Penyakit</h3>
+                  <input type="text" className="input-file-fitur-testDNA" />
+                </div>
+                <button>Submit</button>
+                <div className='text-riwayat-result'>result</div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-
     </div>
   );
 }
