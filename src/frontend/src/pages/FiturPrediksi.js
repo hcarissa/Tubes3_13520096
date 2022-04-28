@@ -20,6 +20,29 @@ function FiturTambah() {
     let path = `/FiturPrediksi`; 
     navigate(path);
   }
+
+  const hasil = 'GANTI INI';
+
+  const getInputValueNamaPenyakit = (event) => {
+    const userValue = event.target.value;
+    console.log(userValue);
+  };
+
+  const getInputValuePrediksiPenyakit = (event) => {
+    const userValue = event.target.value;
+    console.log(userValue);
+  };
+
+  function setFileSequenceDNA(event) {
+    const reader = new FileReader()
+    reader.onload = async (event) => { 
+      const text = (event.target.result)
+      console.log(text)
+      // alert(text)
+    };
+    reader.readAsText(event.target.files[0])
+  }
+
   return (
     <div className='App-Fitur-Prediksi'>
       <header data-role="Header-Fitur-Prediksi" className='header'>
@@ -47,9 +70,27 @@ function FiturTambah() {
               Test DNA
             </div>
             <div>
-              body
+            <form>
+              <div className='container-input-fitur-testDNA'>
+                <div className='box-input-fitur-testDNA'>
+                  <h3 className='text-testDNA'>Nama Penyakit</h3>
+                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValueNamaPenyakit}/>
+                </div>
+                <div className='box-input-fitur-testDNA'>
+                  <h3 className='text-testDNA'>Sequence DNA</h3>
+                  <input className="input-file-fitur-testDNA" type="file" name="file" onChange={setFileSequenceDNA.bind(this)}/>
+                </div>
+                <div className='box-input-fitur-testDNA'>
+                  <h3 className='text-testDNA'>Prediksi Penyakit</h3>
+                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValuePrediksiPenyakit}/>
+                </div>
+                <button>Submit</button>
+                <div className='text-tesDNA-result'>
+                  {hasil}
+                </div>
+              </div>
+            </form>
             </div>
-            <span>aa</span>
           </div>
         </div>
       </div>

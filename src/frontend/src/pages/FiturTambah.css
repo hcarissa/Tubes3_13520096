@@ -152,33 +152,30 @@
 }
 
 .container-input-fitur-tambah{
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
-    
+    padding: 30px;
 }
 
 .text-tambah{
     font-family: 'Montserrat';
     font-style: normal;
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 14px;
     color: #000000;
     margin-left: 10px;
 }
 
 .box-input-fitur-tambah{
     width: 100%;
-    min-height: 85px;
+    min-height: 80px;
     border-radius: 5px;
     border: none;
     background-color: #D3E0EA;
     color: #000000;;
     font-family: 'Montserrat';
     font-size: 14px;
-    /* padding-left: 10px; */
-    /* padding: 10px; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 10px;
 }
@@ -191,4 +188,15 @@
     font-size: 14px;
     box-shadow: none;
     margin-left:10px;
-  }
+}
+
+.text-tambah-result{
+    margin-top: 10px;
+    min-height: 30px;
+    width: 100%;
+    /* background-color: #D3E0EA; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}

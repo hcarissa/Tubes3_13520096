@@ -148,3 +148,53 @@
     align-items: center;
     justify-content: center;
 }
+
+.container-input-fitur-testDNA{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.box-input-fitur-testDNA{
+    width: 100%;
+    min-height: 80px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D3E0EA;
+    color: #000000;;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+}
+
+.text-testDNA{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 14px;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.input-file-fitur-testDNA{
+    height: 30px;
+    border: none;
+    background-color: #D3E0EA;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    box-shadow: none;
+    margin-left:10px;
+}
+
+.text-tesDNA-result{
+    margin-top: 10px;
+    min-height: 40px;
+    width: 100%;
+    /* background-color: #D3E0EA; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
