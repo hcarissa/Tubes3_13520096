@@ -14,9 +14,9 @@
 // }
 
 const mongoose = require('mongoose');
-
+require('./utils/db');
 var datapenyakitjson = require('./datapenyakit.json');
-var dataprediksijson = require('./hasilprediksi.json');
+var dataprediksijson = require('./dataprediksi.json');
 
 const datajenispenyakit = mongoose.model('jenisPenyakit');
 const datahasilprediksi = mongoose.model('hasilPrediksi');

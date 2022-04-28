@@ -1,8 +1,9 @@
 // import './App.css';
 import './FiturPrediksi.css'
-import React, { Component } from "react";
+import React, { Component, useState, useRef } from "react";
 import logoDNA from './dna.png';
 import { useNavigate, Link } from "react-router-dom";
+import axios from 'axios';
 
 function FiturTambah() {
   let navigate = useNavigate(); 
@@ -22,6 +23,10 @@ function FiturTambah() {
   }
 
   const hasil = 'GANTI INI';
+  const [val, setVal] = useState();
+  const [pred, setPred] = useState();
+
+  const ref = useRef();
 
   const getInputValueNamaPenyakit = (event) => {
     const userValue = event.target.value;
@@ -33,6 +38,11 @@ function FiturTambah() {
     console.log(userValue);
   };
 
+  const getInputValueAlgoritmaPencarian = (event) => {
+    const algoritmaPencarian = event.target.value;
+    console.log(algoritmaPencarian);
+  };
+
   function setFileSequenceDNA(event) {
     const reader = new FileReader()
     reader.onload = async (event) => { 
@@ -42,6 +52,19 @@ function FiturTambah() {
     };
     reader.readAsText(event.target.files[0])
   }
+
+  const reset = () => {
+    // axios.post('http://localhost:8000/tambahPenyakit', {
+    //   'namaPenyakit' : userValue,
+    //   'rantaiDNA' : text
+    // }).then(function (response) {
+    //   console.log(response.data.message);
+    //   alert(response.data.message);
+    // });
+    ref.current.value = "";
+    setVal = "";
+    setPred = "";
+  };
 
   return (
     <div className='App-Fitur-Prediksi'>
@@ -73,25 +96,25 @@ function FiturTambah() {
             <form>
               <div className='container-input-fitur-testDNA'>
                 <div className='box-input-fitur-testDNA'>
-                  <h3 className='text-testDNA'>Nama Penyakit</h3>
-                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValueNamaPenyakit}/>
+                  <h3 className='text-testDNA'>Nama Pengguna</h3>
+                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValueNamaPenyakit} value={val}/>
                 </div>
                 <div className='box-input-fitur-testDNA'>
                   <h3 className='text-testDNA'>Sequence DNA</h3>
-                  <input className="input-file-fitur-testDNA" type="file" name="file" onChange={setFileSequenceDNA.bind(this)}/>
+                  <input className="input-file-fitur-testDNA" type="file" ref={ref} name="file" onChange={setFileSequenceDNA.bind(this)}/>
                 </div>
                 <div className='box-input-fitur-testDNA'>
                   <h3 className='text-testDNA'>Prediksi Penyakit</h3>
-                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValuePrediksiPenyakit}/>
+                  <input type="text" className="input-file-fitur-testDNA" onChange={getInputValuePrediksiPenyakit} value={pred}/>
                 </div>
                 <div className='box-input-fitur-testDNA' min-height="100px">
                   <h3 className='text-testDNA'>Algoritma Pencocokan String</h3>
-                  <select className="input-file-fitur-testDNA">
+                  <select className="input-file-fitur-testDNA" onChange={getInputValueAlgoritmaPencarian}>
                     <option value="KMP">Knuth-Morris-Pratt</option>
                     <option value="BM">Boyer–Moore</option>
                   </select>
                 </div>
-                <button>Submit</button>
+                <button onClick={reset} >Submit</button>
                 <div className='text-tesDNA-result'>
                   {hasil}
                 </div>
