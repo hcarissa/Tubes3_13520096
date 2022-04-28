@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import logoDNA from './dna.png';
 import { useNavigate, Link } from "react-router-dom";
 import { render } from 'react-dom';
-import ReactFileReader from 'react-file-reader';
+// import ReactFileReader from 'react-file-reader';
 
 function FiturTambah() {
   let navigate = useNavigate(); 

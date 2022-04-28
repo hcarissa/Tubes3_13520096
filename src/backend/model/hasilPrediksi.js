@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const hasilPrediksi = new mongoose.model('hasilPrediksi', {
     tanggalPrediksi : {
-        type : Date,
+        type : String,
         required : true
     },
     namaPasien : {
