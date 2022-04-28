@@ -83,13 +83,13 @@ app.post('/tambahPenyakit', (req, res) => {
 
 // query penyakit berdasarkan nama penyakit dan atau tanggal
 app.post('/queryPenyakit', (req, res) => {
-    const inputUser = string(req.body.input);
+    const inputUser = req.body.input;
     const hasilregex = pisahinQuery(inputUser);
     const tanggal = hasilregex[0];
     const penyakit = hasilregex[1];
     
-    // const tanggal = "";
-    // const penyakit = 'ngantuk';
+    // const tanggal = "-1";
+    // const penyakit = 'mental';
 
     if (penyakit != '' & tanggal != '-1') {
         datahasilprediksi.find({
@@ -123,34 +123,49 @@ app.post('/tesDNA', (req, res) => {
     const namaPengguna = req.body.namaPengguna;
     const prediksiPenyakit = req.body.prediksiPenyakit;    
     const algo = req.body.algo;
+    // var data = "";
 
-    const isValid = new Boolean(isDNAValid(DNA));
-
-    if (isValid == true) {
-        const hasil = new Boolean;
-        if (algo == 'KMP') {
-            hasil = new Boolean(KMPMatching(DNA, prediksiPenyakit));
-        } else if (algo == 'BM') {
-            hasil = new Boolean(BMMatching(DNA, prediksiPenyakit));
+    datajenispenyakit.findOne({'namaPenyakit' : prediksiPenyakit}).then(
+        (penyakit) => {
+            // this.data = penyakit;
+            var rantaiDNAPrediksiPenyakit = penyakit.rantaiDNA;
+            const isValid = new Boolean(isDNAValid(DNA));
+            if (isValid == true) {
+                var hasil = new Boolean;
+                if (algo == 'KMP') {
+                    hasil = Boolean(KMPMatching(DNA, rantaiDNAPrediksiPenyakit));
+                } else if (algo == 'BM') {
+                    hasil = Boolean(BMMatching(DNA, rantaiDNAPrediksiPenyakit));
+                }
+                const newhasilPrediksi = new hasilPrediksi({
+                    tanggalPrediksi: tanggalsekarang(),
+                    namaPasien: namaPengguna,
+                    penyakitPrediksi: prediksiPenyakit,
+                    statusTerprediksi: hasil
+                });
+                newhasilPrediksi.save().then(hasilprediksi => {
+                    res.json({
+                        // message : hasilprediksi.namaPengguna + " - " + hasilprediksi.tanggalPrediksi + " - " + hasilprediksi.prediksiPenyakit + " - " + hasilprediksi.hasil
+                        message : namaPengguna + " - " + tanggalsekarang() + " - " + prediksiPenyakit + " - " + hasil
+                    });
+                });
+            }
+            else {
+                res.json({
+                    message: 'Rantai DNA tidak valid'
+                });
+            }
         }
-        const hasilPrediksi = new hasilPrediksi({
-            tanggalPrediksi: tanggalsekarang(),
-            namaPasien: namaPengguna,
-            penyakitPrediksi: prediksiPenyakit,
-            statusTerprediksi: true
-        });
-        hasilPrediksi.save().then(hasilprediksi => {
-            res.json({
-                hasilprediksi,
-                message : "sukses menambahkan ke database"
-            });
-        });
-    }
-    else {
+    ).catch (function(err) {
         res.json({
-            message: 'Rantai DNA tidak valid'
+            message: 'Prediksi penyakit tidak ada di database'
         });
-    }
+        console.log(err);
+    });
+    // console.log(data.rantaiDNA);
+    // if (data != null) {
+    // } else {
+    // }
 }); 
 
 // app.post('/search', (req, res) => {
@@ -277,4 +292,21 @@ app.post('/cobaquery', (req, res) => {
 //        .then(hasilPrediksi => {
 //        res.json(hasilPrediksi);
 //    });
+});
+
+
+app.post("/coba", (req, res) => {
+    const penyakit = "Maag";
+    var data = "";
+    datajenispenyakit.findOne(
+        {
+            "namaPenyakit" : penyakit
+        }
+    ).then(hasil => {
+        this.data = hasil.rantaiDNA;
+        console.log(this.data);
+        console.log(hasil);
+    });
+    console.log(this.data);
+    res.send(this.data);
 });
