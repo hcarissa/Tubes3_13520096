@@ -84,6 +84,13 @@ function FiturTambah() {
                   <h3 className='text-testDNA'>Prediksi Penyakit</h3>
                   <input type="text" className="input-file-fitur-testDNA" onChange={getInputValuePrediksiPenyakit}/>
                 </div>
+                <div className='box-input-fitur-testDNA' min-height="100px">
+                  <h3 className='text-testDNA'>Algoritma Pencocokan String</h3>
+                  <select className="input-file-fitur-testDNA">
+                    <option value="KMP">Knuth-Morris-Pratt</option>
+                    <option value="BM">Boyer–Moore</option>
+                  </select>
+                </div>
                 <button>Submit</button>
                 <div className='text-tesDNA-result'>
                   {hasil}
