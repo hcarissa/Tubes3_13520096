@@ -1,0 +1,1 @@
+untuk database sisanya, bisa dilihat di folder src/backend/utils/ecportdb.js
