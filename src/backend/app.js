@@ -120,12 +120,11 @@ app.post('/tesDNA', (req, res) => {
     datajenispenyakit.findOne({'namaPenyakit' : prediksiPenyakit}).then(
         (penyakit) => {
             var rantaiDNAPrediksiPenyakit = penyakit.rantaiDNA;
-            const isValid = new Boolean(isDNAValid(DNA));
-            if (isValid == true) {
-                var hasil = new Boolean;
+            if (isDNAValid(DNA)) {
+                var hasil = false;
                 if (algo == 'KMP') {
                     hasil = Boolean(KMPMatching(DNA, rantaiDNAPrediksiPenyakit));
-                } else if (algo == 'BM') {
+                } else {
                     hasil = Boolean(BMMatching(DNA, rantaiDNAPrediksiPenyakit));
                 }
                 const newhasilPrediksi = new hasilPrediksi({
