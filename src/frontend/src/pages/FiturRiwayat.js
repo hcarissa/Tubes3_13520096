@@ -10,6 +10,7 @@ function FiturTambah() {
   const [val, setVal] = useState();
   var userQuery = '';
   const [data, setData] = useState();
+  const [mess, setMess] = useState();
   const routeChangeTambah = () =>{ 
     let path = `/FiturTambah`; 
     navigate(path);
@@ -37,6 +38,7 @@ function FiturTambah() {
       'input' : userQuery
       }).then(function (response) {
         setData(response.data);
+        setMess(response.data.message);
         console.log(response.data);
       });
   };
@@ -76,13 +78,9 @@ function FiturTambah() {
                 <button onClick={handleSearch}>Search</button>
                 <div className='text-riwayat-result'>
                   {data && data.map((item, index) => {
-                    if(data.length == 0){
-                      return <div> Tidak ada data </div>
-                    }else{
-                      return (
-                        <div>{item.tanggalPrediksi} - {item.namaPasien} - {item.penyakitPrediksi} - {item.statusTerprediksi}</div>
-                      );
-                    }
+                    return (
+                      <div>{item.tanggalPrediksi} - {item.namaPasien} - {item.penyakitPrediksi} - {item.statusTerprediksi}</div>
+                    );
                   })}
                 </div>
               </div>
