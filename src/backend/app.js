@@ -89,22 +89,32 @@ app.post('/queryPenyakit', (req, res) => {
             "penyakitPrediksi" : {$regex: penyakit, $options: 'i'}, 
             "tanggalPrediksi" : {$regex: tanggal, $options: 'i'}
         }).then(hasilprediksi => {
-            res.send(hasilprediksi);
+            res.send({
+                hasilprediksi,
+                message: hasilprediksi.length + " Data penyakit berhasil ditemukan!"
+            });
         });
     } else if (penyakit != '') {
         datahasilprediksi.find({
             "penyakitPrediksi" : {$regex: penyakit, $options: 'i'}
         }).then(hasilprediksi => {
-            res.send(hasilprediksi);
+            res.send({
+                hasilprediksi,
+                message: hasilprediksi.length + " Data penyakit berhasil ditemukan!"
+            });
         });
     } else if (tanggal != '-1') {
         datahasilprediksi.find({
             "tanggalPrediksi" : {$regex: tanggal, $options: 'i'}
         }).then(hasilprediksi => {
-            res.send(hasilprediksi);
+            res.send({
+                hasilprediksi,
+                message: hasilprediksi.length + " Data penyakit berhasil ditemukan!"
+            });
         });
     } else {
         res.json({
+            hasilprediksi : [],
             message: 'Tidak ada hasil prediksi'
         });
     }
