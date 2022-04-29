@@ -23,7 +23,7 @@
 ``` 
 cd src/backend
 npm install
-node app 
+npm start
 ```
 3. Jalankan frontend
 ``` 
