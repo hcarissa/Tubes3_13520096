@@ -109,7 +109,6 @@
 }
 
 .container-box-Fitur-Tambah {
-    position: absolute;
     display: flex;
     min-width: 80vh;
     min-height: 50vh;
@@ -122,9 +121,7 @@
 }
 
 .box-fitur-Tambah{
-    /* object-fit: cover; */
     width: 80%;
-    position: absolute;
     min-width: 80vh;
     max-width: 900px;
     min-height: 50vh;
@@ -180,10 +177,19 @@
     margin-bottom: 10px;
 }
 
-.input-file-fitur-tambah{
+.input-text-fitur-tambah{
     height: 30px;
     border: none;
     background-color: #D3E0EA;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    box-shadow: none;
+    margin-left:10px;
+}
+
+.input-file-fitur-tambah{
+    height: 30px;
+    border: none;
     font-family: 'Montserrat';
     font-size: 14px;
     box-shadow: none;
@@ -194,9 +200,7 @@
     margin-top: 10px;
     min-height: 30px;
     width: 100%;
-    /* background-color: #D3E0EA; */
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
 }

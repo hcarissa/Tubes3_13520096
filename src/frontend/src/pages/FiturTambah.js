@@ -89,7 +89,7 @@ function FiturTambah() {
               <div className='container-input-fitur-tambah'>
                 <div className='box-input-fitur-tambah'>
                   <h3 className='text-tambah'>Nama Penyakit</h3>
-                  <input type="text" onChange={getInputValue} className="input-file-fitur-tambah" value={val}/>
+                  <input type="text" onChange={getInputValue} className="input-text-fitur-tambah" value={val}/>
                 </div>
                 
                 <div className='box-input-fitur-tambah'>

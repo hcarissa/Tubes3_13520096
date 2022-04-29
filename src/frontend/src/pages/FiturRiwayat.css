@@ -109,7 +109,6 @@
 }
 
 .container-box-Fitur-Riwayat {
-    position: absolute;
     display: flex;
     min-width: 80vh;
     min-height: 50vh;
@@ -119,19 +118,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .box-fitur-Riwayat{
-    /* object-fit: cover; */
     width: 80%;
-    position: absolute;
     min-width: 80vh;
     max-width: 900px;
     min-height: 50vh;
     background: #EEEEEE;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-
 }
 
 .box-fitur-header-Riwayat{

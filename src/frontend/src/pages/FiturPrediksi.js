@@ -110,7 +110,7 @@ function FiturTambah() {
                 </div>
                 <div className='box-input-fitur-testDNA'>
                   <h3 className='text-testDNA'>Sequence DNA</h3>
-                  <input className="input-file-fitur-testDNA" type="file" ref={ref} name="file" onChange={setFileSequenceDNA.bind(this)}/>
+                  <input className="input-file-Choosen-fitur-testDNA" type="file" ref={ref} name="file" onChange={setFileSequenceDNA.bind(this)}/>
                 </div>
                 <div className='box-input-fitur-testDNA'>
                   <h3 className='text-testDNA'>Prediksi Penyakit</h3>

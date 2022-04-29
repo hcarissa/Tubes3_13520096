@@ -41,6 +41,7 @@ function FiturTambah() {
         setMess(response.data.message);
         console.log(response.data);
       });
+    
   };
 
   return (
