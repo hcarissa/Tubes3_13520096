@@ -94,16 +94,6 @@ function pisahinTanggal(tanggal){
     return(tanggalList[0] + "/" + tanggalList[1] + "/" + tanggalList[2]);
 }
 
-function count1s(arr){
-    counter = 0;
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] == 1){
-            counter++;
-        }
-    }
-    return counter;
-}
-
 function isDNAValid(dna){
     return (/^[AGCT]+$/).test(dna);
 }
